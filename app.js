@@ -1,5 +1,6 @@
 // yargs.command usage. Node.js 
 
+yargs.version('1.1.0')
 
 yargs.command({
     command: 'list',
@@ -11,7 +12,7 @@ yargs.command({
         }
     },
     handler: function(){
-        console.log('adding to a list ')
+        console.log('adding to a list', argv)
     }
 })
 
@@ -25,7 +26,7 @@ yargs.command({
         }
     },
     handler: function(){
-        console.log('reading a list')
+        console.log('reading a list', argv)
     }
 })
 
@@ -35,11 +36,12 @@ yargs.command({
     builder: {
         title:{
             describe: 'Note Title',
-            demandOption: true
+            demandOption: true,
+            type: 'string',
         }
     },
     handler: function(){
-        console.log('remove from list')
+        console.log('remove from list', argv)
     }
 })
 
@@ -53,6 +55,15 @@ yargs.command({
         }
     },
     handler: function(){
-        console.log('add to list')
+        console.log('add to list', argv)
     }
 })
+
+yargs.parse();
+
+// Challenge: add an option to Yargs 
+
+// 1. setup a body option for the add command
+// 2. Configure a description, Make it required, and for it to be a string
+// 3. Log the body value in the handler function 
+// 4. Test your work! 
