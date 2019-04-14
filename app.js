@@ -16,3 +16,19 @@ yargs.command({
         console.log('reading a list')
     }
 })
+
+yargs.command({
+    command: 'remove',
+    describe: 'remove property',
+    handler: function(){
+        console.log('remove from list')
+    }
+})
+
+yargs.command({
+    command: 'add',
+    describe: 'add objects',
+    handler: function(){
+        console.log('add to list')
+    }
+})
