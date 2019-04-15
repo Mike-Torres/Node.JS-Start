@@ -1,10 +1,27 @@
-const name = require('./utils.js')
+/*
+const add = require('./utils.js')
 
-console.log(name);
+const sum = add(1, 3);
 
+console.log(add(1, 3));
+console.log('-------------------------------------------------')
+console.log(sum)
+*/
 
+// 
+//  Challenge: Define and use a function in a new file
+//
+//  1. Create a new files called hello.js
+//  2. Create a getSmile function that returns "you're smiling!"
+//  3. Export getSmile Function 
+//  4. From notes.js, load in and call the function printing message to console
+//
+//
+const getSmile = require('./hello.js')
 
+const smile = getSmile("You're smiling!")
 
+console.log(smile)
 
 
 
