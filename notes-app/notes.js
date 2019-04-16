@@ -1,7 +1,22 @@
 const chalk = require('chalk')
-const words = "SUCCESS!"
-console.log(chalk.green.bold.inverse(words))
+const getSmile = require('./hello.js')
 
+const command = process.argv[2]
+
+console.log(process.argv)
+
+if(command === 'add') {
+    console.log('adding note')
+} else if(command === 'remove') {
+    console.log('removing note')
+}
+
+/*
+const words = "SUCCESS!"
+const msg = chalk.green.bold.inverse(words)
+console.log(msg)
+console.log(process.argv[2])
+*/
 
 //
 // Challenge: Use the Chalk library in your project
@@ -13,11 +28,11 @@ console.log(chalk.green.bold.inverse(words))
 //
 // Bonus: use the docs to mess around with other styles. Make the text bold and inversed - done
 
-const getSmile = require('./hello.js')
+/*const getSmile = require('./hello.js')
 const smile = getSmile()
 
 console.log(smile)
-
+*/
 
 //const validator = require('validator')
 
