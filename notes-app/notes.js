@@ -1,7 +1,28 @@
-const validator = require('validator')
+const chalk = require('chalk')
+const words = "SUCCESS!"
+console.log(chalk.green.bold.inverse(words))
 
-console.log(validator.isEmail('michael@yahoo.com'))
-console.log(validator.isURL('https/mead.io'))
+
+//
+// Challenge: Use the Chalk library in your project
+//
+// 1. Install Chalk Version 2.4.2 - Done
+// 2. Load Chalk into app.js - Done
+// 3. Use it to print the string "Success!" to the console in green - done
+// 4. Test your work - done
+//
+// Bonus: use the docs to mess around with other styles. Make the text bold and inversed - done
+
+const getSmile = require('./hello.js')
+const smile = getSmile()
+
+console.log(smile)
+
+
+//const validator = require('validator')
+
+//console.log(validator.isEmail('michael@yahoo.com'))
+//console.log(validator.isURL('https/mead.io'))
 /*
 const add = require('./utils.js')
 
