@@ -1,7 +1,7 @@
-require('validator')
+const validator = require('validator')
 
-
-
+console.log(validator.isEmail('michael@yahoo.com'))
+console.log(validator.isURL('https/mead.io'))
 /*
 const add = require('./utils.js')
 
@@ -20,13 +20,13 @@ console.log(sum)
 //  3. Export getSmile Function 
 //  4. From notes.js, load in and call the function printing message to console
 //
-//
+/*
 const getSmile = require('./hello.js')
 
 const smile = getSmile()
 
 console.log(smile)
-
+*/
 
 
 /*
