@@ -1,3 +1,7 @@
+require('validator')
+
+
+
 /*
 const add = require('./utils.js')
 
@@ -19,7 +23,7 @@ console.log(sum)
 //
 const getSmile = require('./hello.js')
 
-const smile = getSmile("You're smiling!")
+const smile = getSmile()
 
 console.log(smile)
 
