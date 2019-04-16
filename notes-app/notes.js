@@ -1,7 +1,76 @@
 const chalk = require('chalk')
+const yargs = require('yargs')
 const getSmile = require('./hello.js')
 
-const command = process.argv[2]
+// Customized yargs version
+
+yargs.version('1.1.0')
+
+// add, remove, read, list
+
+// Create Add Command 
+
+yargs.command({
+    command: 'add',
+    describe: 'Add missle vectors',
+    builder: {
+        title: {
+            describe: 'Parsing adding missle vectors',
+            demandOption: true,
+            type: 'string'
+        },
+        body: {
+            description: 'Note Body',
+            demandOption: true,
+            type: 'string'
+        }
+    },
+    handler: function(argv){
+        console.log('title: ' + argv.title)
+        console.log('body: ' + argv.body)
+    }
+}),
+
+
+// Create Remove Command 
+ 
+yargs.command({
+    command: 'remove',
+    describe: 'remove all missle vector options',
+    handler: function(){
+        console.log('remove vector options for missles')
+    }
+}),
+
+// Create List Command 
+
+yargs.command({
+    command: 'read',
+    describe: 'Read vectors',
+    handler: function(){
+        console.log('reading vectors')
+    }
+}),
+
+
+// Create Remove Command 
+ 
+yargs.command({
+    command: 'list',
+    describe: 'list all missle vector options',
+    handler: function(){
+        console.log('list vector options for missles')
+    }
+}),
+
+
+yargs.parse()
+//console.log(yargs.argv)
+
+
+
+
+/*const command = process.argv[2]
 
 console.log(process.argv)
 
@@ -10,7 +79,7 @@ if(command === 'add') {
 } else if(command === 'remove') {
     console.log('removing note')
 }
-
+*/
 /*
 const words = "SUCCESS!"
 const msg = chalk.green.bold.inverse(words)
