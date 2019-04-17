@@ -2,7 +2,7 @@ const chalk = require('chalk')
 const yargs = require('yargs')
 const notes = require('./notes.js')
 //
-// Challenge: Setup Commany Option and Function
+// Challenge: Setup Commany Option and Function - Complete
 //
 // 1: Setup the remove command to take a required "--title" option
 // 2: Create and export a removeNote function from notes.js
@@ -11,10 +11,17 @@ const notes = require('./notes.js')
 // 5: Test your work using node app.js remove --title"="some title"
 //
 //
-// Challenge 2: Wire Up removeNote
+// Challenge 2: Wire Up removeNote - Complete
 //
 // 1: Load existing Notes
 // 2: Use Array Filter method to remove the matching note (if any)
+// 3: Save the newly created array
+// 4: Test your work with a title that exists and a title that doesn't exist
+//
+// Challenge 3: Use Chalk to provide a useful logs for remove
+//
+// 1: If a note is removed, print "Note Removed!" with a green background
+// 2: if no note is removed, print "No note found!" with a red background
 //
 //
 //
