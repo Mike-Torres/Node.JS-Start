@@ -1,6 +1,25 @@
 const chalk = require('chalk')
 const yargs = require('yargs')
-const notes = require('./app.js')
+const notes = require('./notes.js')
+//
+// Challenge: Setup Commany Option and Function
+//
+// 1: Setup the remove command to take a required "--title" option
+// 2: Create and export a removeNote function from notes.js
+// 3: Call removeNote in remove command handler
+// 4: Have removeNote log the title of the note to be removed
+// 5: Test your work using node app.js remove --title"="some title"
+//
+//
+// Challenge 2: Wire Up removeNote
+//
+// 1: Load existing Notes
+// 2: Use Array Filter method to remove the matching note (if any)
+//
+//
+//
+//
+
 
 // Customized yargs version
 
@@ -15,7 +34,7 @@ yargs.command({
     describe: 'Add missle vectors',
     builder: {
         title: {
-            describe: 'Parsing adding missle vectors',
+            describe: 'add note',
             demandOption: true,
             type: 'string'
         },
@@ -26,19 +45,24 @@ yargs.command({
         }
     },
     handler: function(argv){
-        console.log('title: ' + argv.title)
-        console.log('body: ' + argv.body)
+        notes.addNote(argv.title, argv.body)
     }
 }),
-
 
 // Create Remove Command 
  
 yargs.command({
     command: 'remove',
-    describe: 'remove all missle vector options',
-    handler: function(){
-        console.log('remove vector options for missles')
+    describe: 'remove all',
+    builder:{
+        title: {
+            describe: 'note title',
+            demandOption: true,
+            type: 'string'
+        },
+    },
+    handler: function(argv){
+        notes.removeNote(argv.title)
     }
 }),
 
@@ -53,13 +77,12 @@ yargs.command({
 }),
 
 
-// Create Remove Command 
+// Create Read Command 
  
 yargs.command({
     command: 'list',
     describe: 'list all missle vector options',
     handler: function(){
-        console.log('list vector options for missles')
     }
 }),
 
