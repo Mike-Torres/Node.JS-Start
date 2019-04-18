@@ -23,10 +23,16 @@ const notes = require('./notes.js')
 // 1: If a note is removed, print "Note Removed!" with a green background
 // 2: if no note is removed, print "No note found!" with a red background
 //
+// Challenge 4: Wire Up List Command
+//
+// Create and export your listNotes from notes.js
+// - "Your Notes" using Chalk
+// - print note title for each note
+// 2. Call listNotes from command handler
+// 3. Test your work!
 //
 //
 //
-
 
 // Customized yargs version
 
@@ -51,8 +57,8 @@ yargs.command({
             type: 'string'
         }
     },
-    handler: function(argv){
-        notes.addNote(argv.title, argv.body)
+    handler(argv) {
+        notes.addNote(argv.title, argv.body)  
     }
 }),
 
@@ -68,28 +74,29 @@ yargs.command({
             type: 'string'
         },
     },
-    handler: function(argv){
+    handler(argv) { 
         notes.removeNote(argv.title)
     }
 }),
 
-// Create List Command 
+// Create Read Command 
 
 yargs.command({
     command: 'read',
     describe: 'Read vectors',
-    handler: function(){
+    handler() {
         console.log('reading vectors')
     }
 }),
 
 
-// Create Read Command 
+// Create List Command 
  
 yargs.command({
     command: 'list',
     describe: 'list all missle vector options',
-    handler: function(){
+    handler(){
+        notes.listNotes()
     }
 }),
 
@@ -178,4 +185,33 @@ const fs = require('fs')
 //fs.writeFileSync('notes.txt','Hey Mike' )
 
 fs.appendFileSync('notes.txt', ' How you doing!')
+*/
+
+/*
+const payOut = [] 
+const names = ["JP","DK", "Eli", "Horne"]
+const sideOne = 25
+const sideTwo = 25
+const winAll =  sideOne + sideTwo + 25
+const maxOut = 20
+const reset = 0
+
+
+var createScoreData = (names, ) => {
+    if(names === winAll ){
+        payOut.push(names) 
+    }
+    else if(names === sideOne){
+        payOut.push(names)
+    }       
+    else if(names === sideTwo){
+        payOut.push(names)
+    }  
+    else if(sideOne === sideTwo){
+        reset.push(names)
+    }  
+    else {
+        maxOut.push(names)
+    }
+} 
 */
