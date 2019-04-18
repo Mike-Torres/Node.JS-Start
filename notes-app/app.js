@@ -83,10 +83,18 @@ yargs.command({
 
 yargs.command({
     command: 'read',
-    describe: 'Read vectors',
-    handler() {
-        console.log('reading vectors')
-    }
+    describe: 'read notes',
+    builder:{
+        title: {
+            describe: 'note title',
+            demandOption: true,
+            type: 'String'
+        }
+    },
+    handler(argv){
+        notes.readNotes(argv.title)
+    },
+
 }),
 
 
@@ -94,10 +102,11 @@ yargs.command({
  
 yargs.command({
     command: 'list',
-    describe: 'list all missle vector options',
+    describe: 'list notes',
     handler(){
         notes.listNotes()
-    }
+    },
+
 }),
 
 
